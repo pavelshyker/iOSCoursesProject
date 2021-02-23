@@ -28,7 +28,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="GameProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="Car_is_on_fire_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="baM-hO-u5Z"/>
                         <viewControllerLayoutGuide type="bottom" id="L35-b8-hSS"/>
@@ -131,7 +131,7 @@
         <!--Game View Controller-->
         <scene sceneID="mKR-oe-kXP">
             <objects>
-                <viewController storyboardIdentifier="GameViewController" id="HSb-5H-QNL" customClass="GameViewController" customModule="GameProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameViewController" id="HSb-5H-QNL" customClass="GameViewController" customModule="Car_is_on_fire_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="btc-SD-tqb"/>
                         <viewControllerLayoutGuide type="bottom" id="39u-AA-UT4"/>
@@ -209,7 +209,7 @@
         <!--Records View Controller-->
         <scene sceneID="EKc-PZ-kz5">
             <objects>
-                <viewController storyboardIdentifier="RecordsViewController" id="aS3-wG-2bb" customClass="RecordsViewController" customModule="GameProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecordsViewController" id="aS3-wG-2bb" customClass="RecordsViewController" customModule="Car_is_on_fire_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="V7y-5j-TJ0"/>
                         <viewControllerLayoutGuide type="bottom" id="DZX-54-cAo"/>
@@ -271,7 +271,7 @@
         <!--Game Over View Controller-->
         <scene sceneID="XAm-ZV-ANf">
             <objects>
-                <viewController storyboardIdentifier="GameOverViewController" id="xTD-Kb-2dH" customClass="GameOverViewController" customModule="GameProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameOverViewController" id="xTD-Kb-2dH" customClass="GameOverViewController" customModule="Car_is_on_fire_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dBM-bR-O3I"/>
                         <viewControllerLayoutGuide type="bottom" id="SqZ-aK-Tfl"/>
@@ -359,7 +359,7 @@
         <!--Settings View Controller-->
         <scene sceneID="tUT-gR-GU4">
             <objects>
-                <viewController storyboardIdentifier="SettingsViewController" id="vl9-SK-NbI" customClass="SettingsViewController" customModule="GameProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" id="vl9-SK-NbI" customClass="SettingsViewController" customModule="Car_is_on_fire_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bc0-2v-SQe"/>
                         <viewControllerLayoutGuide type="bottom" id="07I-Pa-gz3"/>

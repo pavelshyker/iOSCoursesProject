@@ -1,0 +1,6 @@
+framework module Pods_Homework23_PicturesRepository_Homework23_PicturesRepositoryUITests {
+  umbrella header "Pods-Homework23_PicturesRepository-Homework23_PicturesRepositoryUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
