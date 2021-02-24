@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 
 class ViewController: UIViewController {
-
+    
     let locationManager = CLLocationManager()
     let geoCoder = CLGeocoder()
     var timer: Timer = Timer()
@@ -27,6 +27,9 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+    }
+    
+    func checkLocation() {
         if CLLocationManager.authorizationStatus().rawValue != 2 && CLLocationManager.locationServicesEnabled() && isLocationUpdated == false {
             timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (_) in
                 self.navigateToMainWeatherScreen()
@@ -46,15 +49,15 @@ class ViewController: UIViewController {
             }
         }
     }
-
+    
     public func navigateToMainWeatherScreen() {
-    if !locationCity.isEmpty {
-        timer.invalidate()
-        let weatherStoryBoard = UIStoryboard(name: "Main", bundle: nil)
-        let weatherViewController = weatherStoryBoard.instantiateViewController(withIdentifier: String(describing: MainWeatherViewController.self)) as? MainWeatherViewController
-        navigationController?.pushViewController(weatherViewController ?? UIViewController(), animated: true)
-        navigationController?.setNavigationBarHidden(true, animated: true)
-        isLocationUpdated = true
+        if !locationCity.isEmpty {
+            timer.invalidate()
+            let weatherStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+            let weatherViewController = weatherStoryBoard.instantiateViewController(withIdentifier: String(describing: MainWeatherViewController.self)) as? MainWeatherViewController
+            navigationController?.pushViewController(weatherViewController ?? UIViewController(), animated: true)
+            navigationController?.setNavigationBarHidden(true, animated: true)
+            isLocationUpdated = true
         }
     }
     
@@ -64,7 +67,6 @@ class ViewController: UIViewController {
         navigationController?.pushViewController(addCityButtonViewController ?? UIViewController(), animated: true)
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
-
     
     func startMonitoringLocation() {
         locationManager.requestWhenInUseAuthorization()
@@ -80,15 +82,24 @@ class ViewController: UIViewController {
 extension ViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let currentLocation = locations.last {
-        
-        geoCoder.reverseGeocodeLocation(currentLocation) { (placemarks, error) in
-            if let currentLocationPlacemark = placemarks?.first {
-                if let placemarkCity = currentLocationPlacemark.locality {
-                    self.locationCity = placemarkCity
-                    UserDefaults.standard.set(self.locationCity, forKey: "geoCity")
+            
+            geoCoder.reverseGeocodeLocation(currentLocation) { (placemarks, error) in
+                if let currentLocationPlacemark = placemarks?.first {
+                    if let placemarkCity = currentLocationPlacemark.locality {
+                        self.locationCity = placemarkCity
+                        UserDefaults.standard.set(self.locationCity, forKey: "geoCity")
+                    }
                 }
             }
-            }
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            self.checkLocation()
+        }
+        if status == .denied {
+            self.checkLocation()
         }
     }
 }
